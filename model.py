@@ -30,7 +30,7 @@ class PositionalEmbedding(nn.Module):
         #sin for even positions
         pe[:, 0::2] = torch.sin(position * div_term)
         #cos for odd positions
-        pe[:, 1::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
 
         pe = pe.unsqueeze(0) # (1, seq_len, d_model)
 
